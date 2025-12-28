@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Brand Colors - Light Blue, Coral/Orange, Pink/Purple, Black */
+    --background: 200 40% 98%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    /* Primary: Coral/Orange */
+    --primary: 16 90% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Light Blue */
+    --secondary: 195 85% 75%;
+    --secondary-foreground: 0 0% 10%;
+
+    /* Muted */
+    --muted: 200 30% 94%;
+    --muted-foreground: 200 10% 45%;
+
+    /* Accent: Pink/Purple */
+    --accent: 320 70% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 20% 88%;
+    --input: 200 20% 88%;
+    --ring: 16 90% 65%;
+
+    --radius: 1rem;
+
+    /* Custom brand tokens */
+    --coral: 16 90% 65%;
+    --coral-light: 16 90% 80%;
+    --sky: 195 85% 75%;
+    --sky-light: 195 85% 90%;
+    --pink: 320 70% 70%;
+    --pink-light: 320 70% 85%;
+    --dark: 0 0% 10%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--coral)) 0%, hsl(var(--pink)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--sky)) 0%, hsl(var(--coral-light)) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(var(--sky-light)) 0%, hsl(var(--background)) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 4px 24px -4px hsl(var(--dark) / 0.1);
+    --shadow-button: 0 4px 16px -4px hsl(var(--coral) / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--coral) / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 20% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 16 90% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 195 60% 35%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 200 10% 60%;
+
+    --accent: 320 60% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 16 90% 65%;
+
+    --coral: 16 90% 65%;
+    --coral-light: 16 80% 50%;
+    --sky: 195 70% 50%;
+    --sky-light: 195 60% 30%;
+    --pink: 320 60% 55%;
+    --pink-light: 320 50% 40%;
+    --dark: 0 0% 95%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--coral)) 0%, hsl(var(--pink)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--sky)) 0%, hsl(var(--coral-light)) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(var(--sky-light)) 0%, hsl(var(--background)) 100%);
+
+    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.4);
+    --shadow-button: 0 4px 16px -4px hsl(var(--coral) / 0.5);
+    --shadow-glow: 0 0 40px hsl(var(--coral) / 0.4);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
