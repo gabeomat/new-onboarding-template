@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Space Grotesk", "system-ui", "sans-serif"],
-        body: ["DM Sans", "system-ui", "sans-serif"],
+        display: ["Cinzel", "serif"],
+        body: ["Cormorant Garamond", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -62,19 +62,17 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         // Brand colors
-        coral: {
-          DEFAULT: "hsl(var(--coral))",
-          light: "hsl(var(--coral-light))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
         },
-        sky: {
-          DEFAULT: "hsl(var(--sky))",
-          light: "hsl(var(--sky-light))",
+        teal: {
+          DEFAULT: "hsl(var(--teal))",
+          dark: "hsl(var(--teal-dark))",
         },
-        pink: {
-          DEFAULT: "hsl(var(--pink))",
-          light: "hsl(var(--pink-light))",
-        },
-        dark: "hsl(var(--dark))",
+        bronze: "hsl(var(--bronze))",
+        cream: "hsl(var(--cream))",
+        midnight: "hsl(var(--midnight))",
       },
       borderRadius: {
         lg: "var(--radius)",

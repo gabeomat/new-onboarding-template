@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,59 +10,59 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Brand Colors - Light Blue, Coral/Orange, Pink/Purple, Black */
-    --background: 200 40% 98%;
-    --foreground: 0 0% 10%;
+    /* Brand Colors - Dark Teal, Gold, Cream */
+    --background: 195 45% 92%;
+    --foreground: 195 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 195 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 195 30% 15%;
 
-    /* Primary: Coral/Orange */
-    --primary: 16 90% 65%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary: Gold */
+    --primary: 42 88% 55%;
+    --primary-foreground: 195 30% 15%;
 
-    /* Secondary: Light Blue */
-    --secondary: 195 85% 75%;
-    --secondary-foreground: 0 0% 10%;
+    /* Secondary: Dark Teal */
+    --secondary: 195 40% 25%;
+    --secondary-foreground: 42 100% 95%;
 
     /* Muted */
-    --muted: 200 30% 94%;
-    --muted-foreground: 200 10% 45%;
+    --muted: 195 25% 88%;
+    --muted-foreground: 195 20% 40%;
 
-    /* Accent: Pink/Purple */
-    --accent: 320 70% 70%;
+    /* Accent: Bronze/Copper */
+    --accent: 35 75% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 200 20% 88%;
-    --input: 200 20% 88%;
-    --ring: 16 90% 65%;
+    --border: 195 25% 82%;
+    --input: 195 25% 82%;
+    --ring: 42 88% 55%;
 
     --radius: 1rem;
 
     /* Custom brand tokens */
-    --coral: 16 90% 65%;
-    --coral-light: 16 90% 80%;
-    --sky: 195 85% 75%;
-    --sky-light: 195 85% 90%;
-    --pink: 320 70% 70%;
-    --pink-light: 320 70% 85%;
-    --dark: 0 0% 10%;
+    --gold: 42 88% 55%;
+    --gold-light: 42 85% 70%;
+    --teal: 195 40% 25%;
+    --teal-dark: 195 45% 18%;
+    --bronze: 35 75% 50%;
+    --cream: 42 50% 95%;
+    --midnight: 195 30% 15%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--coral)) 0%, hsl(var(--pink)) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--sky)) 0%, hsl(var(--coral-light)) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(var(--sky-light)) 0%, hsl(var(--background)) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--bronze)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--teal)) 0%, hsl(var(--teal-dark)) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--background)) 100%);
 
     /* Shadows */
-    --shadow-card: 0 4px 24px -4px hsl(var(--dark) / 0.1);
-    --shadow-button: 0 4px 16px -4px hsl(var(--coral) / 0.4);
-    --shadow-glow: 0 0 40px hsl(var(--coral) / 0.3);
+    --shadow-card: 0 4px 24px -4px hsl(var(--midnight) / 0.12);
+    --shadow-button: 0 4px 16px -4px hsl(var(--gold) / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--gold) / 0.3);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -75,49 +75,49 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 20% 8%;
-    --foreground: 0 0% 95%;
+    --background: 195 45% 10%;
+    --foreground: 42 50% 92%;
 
-    --card: 220 20% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 195 40% 14%;
+    --card-foreground: 42 50% 92%;
 
-    --popover: 220 20% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 195 40% 14%;
+    --popover-foreground: 42 50% 92%;
 
-    --primary: 16 90% 65%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 42 88% 60%;
+    --primary-foreground: 195 30% 15%;
 
-    --secondary: 195 60% 35%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 195 40% 20%;
+    --secondary-foreground: 42 100% 95%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 200 10% 60%;
+    --muted: 195 35% 18%;
+    --muted-foreground: 195 15% 65%;
 
-    --accent: 320 60% 55%;
+    --accent: 35 75% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 22%;
-    --input: 220 15% 22%;
-    --ring: 16 90% 65%;
+    --border: 195 30% 22%;
+    --input: 195 30% 22%;
+    --ring: 42 88% 60%;
 
-    --coral: 16 90% 65%;
-    --coral-light: 16 80% 50%;
-    --sky: 195 70% 50%;
-    --sky-light: 195 60% 30%;
-    --pink: 320 60% 55%;
-    --pink-light: 320 50% 40%;
-    --dark: 0 0% 95%;
+    --gold: 42 88% 60%;
+    --gold-light: 42 85% 70%;
+    --teal: 195 40% 25%;
+    --teal-dark: 195 45% 18%;
+    --bronze: 35 75% 55%;
+    --cream: 42 50% 95%;
+    --midnight: 195 45% 10%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(var(--coral)) 0%, hsl(var(--pink)) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--sky)) 0%, hsl(var(--coral-light)) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(var(--sky-light)) 0%, hsl(var(--background)) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--bronze)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--teal)) 0%, hsl(var(--teal-dark)) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(var(--teal-dark)) 0%, hsl(var(--background)) 100%);
 
-    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.4);
-    --shadow-button: 0 4px 16px -4px hsl(var(--coral) / 0.5);
-    --shadow-glow: 0 0 40px hsl(var(--coral) / 0.4);
+    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.5);
+    --shadow-button: 0 4px 16px -4px hsl(var(--gold) / 0.5);
+    --shadow-glow: 0 0 40px hsl(var(--gold) / 0.4);
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
