@@ -19,6 +19,7 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
   const [submissions, setSubmissions] = useState<QuizSubmission[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     if (!loading && !user) {
@@ -26,15 +27,36 @@ const AdminDashboard = () => {
       return;
     }
 
-    if (user?.email !== "coachme@gabrielomat.com") {
-      toast.error("Unauthorized access");
-      signOut();
-      navigate("/admin/login");
-      return;
+    if (user) {
+      checkAdminStatus();
     }
-
-    fetchSubmissions();
   }, [user, loading, navigate]);
+
+  const checkAdminStatus = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("admin_users")
+        .select("user_id")
+        .eq("user_id", user?.id)
+        .maybeSingle();
+
+      if (error) throw error;
+
+      if (!data) {
+        toast.error("Unauthorized access");
+        await signOut();
+        navigate("/admin/login");
+        return;
+      }
+
+      setIsAdmin(true);
+      fetchSubmissions();
+    } catch (error: any) {
+      toast.error("Failed to verify admin status");
+      console.error(error);
+      navigate("/admin/login");
+    }
+  };
 
   const fetchSubmissions = async () => {
     try {
@@ -63,7 +85,7 @@ const AdminDashboard = () => {
     }
   };
 
-  if (loading || isLoading) {
+  if (loading || isLoading || !isAdmin) {
     return (
       <div className="min-h-screen gradient-hero flex items-center justify-center">
         <p className="text-lg">Loading...</p>
