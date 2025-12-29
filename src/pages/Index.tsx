@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Quiz from "@/components/quiz/Quiz";
-import celestialSun from "@/assets/untitled_design_(7).png";
+import shellImage from "@/assets/untitled_design_(9).png";
 import { Settings, X } from "lucide-react";
 import { useState } from "react";
 
@@ -56,8 +56,8 @@ const Index = () => {
 
           <div className="flex justify-center mb-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <img
-              src={celestialSun}
-              alt="Celestial sun symbol"
+              src={shellImage}
+              alt="Seashell symbol"
               className="w-32 h-32 md:w-40 md:h-40 animate-float"
             />
           </div>
