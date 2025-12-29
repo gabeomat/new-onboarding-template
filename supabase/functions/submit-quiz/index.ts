@@ -77,7 +77,7 @@ Deno.serve(async (req: Request) => {
         </h1>
 
         <p style="font-size: 16px; color: #4a4a4a; line-height: 1.6; margin-bottom: 32px;">
-          Give me 24 hours and I'll send a Loom video showing you exactly what to focus on in the community to hit the ground running!
+          Thank you for completing the nutrition assessment! We're reviewing your goals and preferences to create your personalized nutrition blueprint.
         </p>
 
         <div style="background: linear-gradient(135deg, #a8dadc 0%, #f1c0e8 100%); padding: 32px; border-radius: 16px; margin-bottom: 32px;">
@@ -89,23 +89,23 @@ Deno.serve(async (req: Request) => {
 
         <div style="margin-bottom: 32px;">
           <h3 style="font-size: 20px; font-weight: 700; color: #1a1a1a; margin-bottom: 16px;">
-            What to do now:
+            What happens next?
           </h3>
           <ol style="color: #4a4a4a; line-height: 1.8; padding-left: 20px;">
-            <li style="margin-bottom: 12px;">If you don't have the Skool App downloaded on your phone, do it now. Just search "Skool" on your iPhone or Android.</li>
-            <li style="margin-bottom: 12px;">Introduce yourself in the community to get to level 2 right away!</li>
-            <li style="margin-bottom: 12px;">Browse around the classroom, beginning with the Start Here module.</li>
+            <li style="margin-bottom: 12px;">Check your email for your personalized nutrition blueprint.</li>
+            <li style="margin-bottom: 12px;">Review your custom macro calculations and meal recommendations.</li>
+            <li style="margin-bottom: 12px;">Join our community for ongoing support and guidance.</li>
           </ol>
         </div>
 
         <div style="text-align: center; margin-bottom: 32px;">
-          <a href="https://www.skool.com/futureproof" style="display: inline-block; background: linear-gradient(90deg, #ff6b6b 0%, #ff8c42 100%); color: white; text-decoration: none; padding: 16px 32px; border-radius: 30px; font-weight: 600; font-size: 16px;">
-            Take me to Futureproof
+          <a href="#" style="display: inline-block; background: linear-gradient(90deg, #ff6b6b 0%, #ff8c42 100%); color: white; text-decoration: none; padding: 16px 32px; border-radius: 30px; font-weight: 600; font-size: 16px;">
+            Join the Community
           </a>
         </div>
 
         <p style="font-size: 15px; color: #666; line-height: 1.6; font-style: italic; margin-bottom: 24px;">
-          I'm really excited you're here and can't wait to help you evolve your business, using AI as an amplifier, NOT a replacement for you and your genius.
+          We're excited to support you on your nutrition journey and help you achieve your health and fitness goals!
         </p>
 
         <p style="font-size: 14px; color: #999; margin-top: 32px;">
@@ -144,9 +144,9 @@ Deno.serve(async (req: Request) => {
         "Authorization": `Bearer ${resendApiKey}`,
       },
       body: JSON.stringify({
-        from: "Gabriel from AI Coachbox <onboarding@resend.dev>",
+        from: "Nutrition Blueprint <onboarding@resend.dev>",
         to: email,
-        subject: `Hey ${userName}, you're in! 🎉`,
+        subject: `${userName}, you're in! Your nutrition blueprint is coming`,
         html: userConfirmationHtml,
       }),
     });
