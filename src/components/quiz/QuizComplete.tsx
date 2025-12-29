@@ -45,16 +45,14 @@ const QuizComplete = ({ onRestart }: QuizCompleteProps) => {
       </div>
 
       {/* TODO: Update this link to your community URL */}
-      <a
-        href="https://your-community-url.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block mt-6"
-      >
-        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3">
+      <div className="inline-block mt-6">
+        <Button
+          onClick={() => alert("Update the community URL in QuizComplete.tsx")}
+          className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3"
+        >
           Join the Community
         </Button>
-      </a>
+      </div>
 
       <p className="text-muted-foreground mt-8 max-w-lg mx-auto italic">
         We're excited to support you on your nutrition journey and help you achieve your health and fitness goals!

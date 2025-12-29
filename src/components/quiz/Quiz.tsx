@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
@@ -19,6 +19,15 @@ const Quiz = () => {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [honeypot, setHoneypot] = useState("");
+
+  useEffect(() => {
+    console.log("Quiz component mounted");
+    return () => console.log("Quiz component unmounted");
+  }, []);
+
+  useEffect(() => {
+    console.log("Quiz state changed to:", state);
+  }, [state]);
 
   const currentQuestion = quizQuestions[currentStep];
   const isLastQuestion = currentStep === quizQuestions.length - 1;
@@ -94,10 +103,10 @@ const Quiz = () => {
     try {
       // TODO: Connect to your backend to save submissions and send emails
       // Example: await fetch('/api/submit-quiz', { method: 'POST', body: JSON.stringify({...}) })
-      
+
       // Simulate submission delay
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       console.log("Quiz submitted:", {
         name: userName,
         email: userEmail,
@@ -105,12 +114,12 @@ const Quiz = () => {
         honeypot: honeypot,
       });
 
+      setIsSubmitting(false);
       setState("complete");
       toast.success("Your blueprint is on its way!");
     } catch (error) {
       console.error("Error submitting quiz:", error);
       toast.error("Something went wrong. Please try again.");
-    } finally {
       setIsSubmitting(false);
     }
   };
