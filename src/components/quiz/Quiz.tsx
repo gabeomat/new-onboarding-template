@@ -101,18 +101,38 @@ const Quiz = () => {
     setIsSubmitting(true);
 
     try {
-      // TODO: Connect to your backend to save submissions and send emails
-      // Example: await fetch('/api/submit-quiz', { method: 'POST', body: JSON.stringify({...}) })
+      if (honeypot) {
+        console.log("Bot detected, ignoring submission");
+        setIsSubmitting(false);
+        setState("complete");
+        return;
+      }
 
-      // Simulate submission delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const formattedAnswers = formatAnswers();
+      const answersObject = formattedAnswers.reduce((acc, item) => {
+        acc[item.question] = item.answer;
+        return acc;
+      }, {} as Record<string, string>);
 
-      console.log("Quiz submitted:", {
-        name: userName,
-        email: userEmail,
-        answers: formatAnswers(),
-        honeypot: honeypot,
+      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/submit-quiz`;
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify({
+          email: userEmail,
+          answers: {
+            name: userName,
+            ...answersObject,
+          },
+        }),
       });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit quiz");
+      }
 
       setIsSubmitting(false);
       setState("complete");
