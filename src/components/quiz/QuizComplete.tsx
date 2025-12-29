@@ -17,8 +17,8 @@ const QuizComplete = ({ onRestart }: QuizCompleteProps) => {
         />
       </div>
 
-      <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gradient">
-        You're In! 🚀
+      <h2 className="text-3xl md:text-4xl font-display font-semibold mb-4 text-primary">
+        You're In!
       </h2>
 
       <p className="text-lg text-muted-foreground mb-8 max-w-lg mx-auto">

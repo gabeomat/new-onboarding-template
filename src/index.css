@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,59 +10,59 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Brand Colors - Dark Teal, Gold, Cream */
-    --background: 195 45% 92%;
-    --foreground: 195 30% 15%;
+    /* Sandy Shore Brand Colors - Coastal Beige & Slate Blue */
+    --background: 32 35% 90%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 195 30% 15%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 195 30% 15%;
+    --popover-foreground: 0 0% 10%;
 
-    /* Primary: Gold */
-    --primary: 42 88% 55%;
-    --primary-foreground: 195 30% 15%;
+    /* Primary: Slate Blue */
+    --primary: 206 22% 48%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary: Dark Teal */
-    --secondary: 195 40% 25%;
-    --secondary-foreground: 42 100% 95%;
+    /* Secondary: Warm Beige */
+    --secondary: 32 26% 72%;
+    --secondary-foreground: 0 0% 10%;
 
     /* Muted */
-    --muted: 195 25% 88%;
-    --muted-foreground: 195 20% 40%;
+    --muted: 32 20% 85%;
+    --muted-foreground: 206 15% 35%;
 
-    /* Accent: Bronze/Copper */
-    --accent: 35 75% 50%;
+    /* Accent: Gray Blue */
+    --accent: 206 18% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 195 25% 82%;
-    --input: 195 25% 82%;
-    --ring: 42 88% 55%;
+    --border: 32 20% 82%;
+    --input: 32 20% 82%;
+    --ring: 206 22% 48%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    /* Custom brand tokens */
-    --gold: 42 88% 55%;
-    --gold-light: 42 85% 70%;
-    --teal: 195 40% 25%;
-    --teal-dark: 195 45% 18%;
-    --bronze: 35 75% 50%;
-    --cream: 42 50% 95%;
-    --midnight: 195 30% 15%;
+    /* Custom Sandy Shore brand tokens */
+    --slate-blue: 206 22% 48%;
+    --slate-blue-light: 206 22% 68%;
+    --beige: 32 26% 72%;
+    --beige-dark: 32 26% 60%;
+    --charcoal: 0 0% 10%;
+    --cream: 32 35% 90%;
+    --gray-blue: 206 18% 60%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--bronze)) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--teal)) 0%, hsl(var(--teal-dark)) 100%);
+    /* Coastal Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--slate-blue)) 0%, hsl(var(--gray-blue)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--beige)) 0%, hsl(var(--cream)) 100%);
     --gradient-hero: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--background)) 100%);
 
     /* Shadows */
-    --shadow-card: 0 4px 24px -4px hsl(var(--midnight) / 0.12);
-    --shadow-button: 0 4px 16px -4px hsl(var(--gold) / 0.4);
-    --shadow-glow: 0 0 40px hsl(var(--gold) / 0.3);
+    --shadow-card: 0 4px 24px -4px hsl(var(--charcoal) / 0.1);
+    --shadow-button: 0 4px 16px -4px hsl(var(--slate-blue) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--slate-blue) / 0.2);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -75,49 +75,49 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 195 45% 10%;
-    --foreground: 42 50% 92%;
+    --background: 0 0% 12%;
+    --foreground: 32 35% 90%;
 
-    --card: 195 40% 14%;
-    --card-foreground: 42 50% 92%;
+    --card: 0 0% 16%;
+    --card-foreground: 32 35% 90%;
 
-    --popover: 195 40% 14%;
-    --popover-foreground: 42 50% 92%;
+    --popover: 0 0% 16%;
+    --popover-foreground: 32 35% 90%;
 
-    --primary: 42 88% 60%;
-    --primary-foreground: 195 30% 15%;
+    --primary: 206 22% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 195 40% 20%;
-    --secondary-foreground: 42 100% 95%;
+    --secondary: 32 26% 65%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 195 35% 18%;
-    --muted-foreground: 195 15% 65%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 206 15% 60%;
 
-    --accent: 35 75% 55%;
+    --accent: 206 18% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 195 30% 22%;
-    --input: 195 30% 22%;
-    --ring: 42 88% 60%;
+    --border: 0 0% 22%;
+    --input: 0 0% 22%;
+    --ring: 206 22% 55%;
 
-    --gold: 42 88% 60%;
-    --gold-light: 42 85% 70%;
-    --teal: 195 40% 25%;
-    --teal-dark: 195 45% 18%;
-    --bronze: 35 75% 55%;
-    --cream: 42 50% 95%;
-    --midnight: 195 45% 10%;
+    --slate-blue: 206 22% 55%;
+    --slate-blue-light: 206 22% 68%;
+    --beige: 32 26% 65%;
+    --beige-dark: 32 26% 50%;
+    --charcoal: 0 0% 10%;
+    --cream: 32 35% 85%;
+    --gray-blue: 206 18% 55%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--bronze)) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--teal)) 0%, hsl(var(--teal-dark)) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(var(--teal-dark)) 0%, hsl(var(--background)) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--slate-blue)) 0%, hsl(var(--gray-blue)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--beige)) 0%, hsl(var(--cream)) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 18%) 0%, hsl(var(--background)) 100%);
 
     --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.5);
-    --shadow-button: 0 4px 16px -4px hsl(var(--gold) / 0.5);
-    --shadow-glow: 0 0 40px hsl(var(--gold) / 0.4);
+    --shadow-button: 0 4px 16px -4px hsl(var(--slate-blue) / 0.5);
+    --shadow-glow: 0 0 40px hsl(var(--slate-blue) / 0.4);
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -140,7 +140,17 @@ All colors MUST be HSL.
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold tracking-tight;
+    @apply font-display font-semibold tracking-wide;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+    letter-spacing: 0.02em;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+    letter-spacing: 0.015em;
   }
 }
 
@@ -174,5 +184,30 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .coastal-elegance {
+    letter-spacing: 0.025em;
+    line-height: 1.6;
+  }
+
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+
+  .text-slate-blue {
+    color: hsl(var(--slate-blue));
+  }
+
+  .bg-slate-blue {
+    background-color: hsl(var(--slate-blue));
+  }
+
+  .text-beige {
+    color: hsl(var(--beige));
+  }
+
+  .bg-beige {
+    background-color: hsl(var(--beige));
   }
 }

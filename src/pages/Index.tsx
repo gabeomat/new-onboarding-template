@@ -44,9 +44,9 @@ const Index = () => {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
             You're In.{" "}
-            <span className="text-gradient">Let's Get You Dangerous.</span>
+            <span className="text-primary">Let's Get You Dangerous.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>

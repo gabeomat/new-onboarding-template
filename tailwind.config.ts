@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Cinzel", "serif"],
-        body: ["Cormorant Garamond", "serif"],
+        display: ["Raleway", "sans-serif"],
+        body: ["Raleway", "sans-serif"],
+        script: ["Great Vibes", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,18 +62,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Brand colors
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
+        "slate-blue": {
+          DEFAULT: "hsl(var(--slate-blue))",
+          light: "hsl(var(--slate-blue-light))",
         },
-        teal: {
-          DEFAULT: "hsl(var(--teal))",
-          dark: "hsl(var(--teal-dark))",
+        beige: {
+          DEFAULT: "hsl(var(--beige))",
+          dark: "hsl(var(--beige-dark))",
         },
-        bronze: "hsl(var(--bronze))",
+        charcoal: "hsl(var(--charcoal))",
         cream: "hsl(var(--cream))",
-        midnight: "hsl(var(--midnight))",
+        "gray-blue": "hsl(var(--gray-blue))",
       },
       borderRadius: {
         lg: "var(--radius)",

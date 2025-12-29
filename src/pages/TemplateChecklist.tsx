@@ -68,7 +68,7 @@ const TemplateChecklist = () => {
     <div className="min-h-screen bg-background">
       <div className="container max-w-4xl py-12 px-4">
         <div className="text-center mb-12">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-4">
             Template Customization Checklist
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

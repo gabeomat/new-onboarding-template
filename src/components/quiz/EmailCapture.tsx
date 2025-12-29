@@ -39,8 +39,8 @@ const EmailCapture = ({ onSubmit, isLoading }: EmailCaptureProps) => {
 
   return (
     <div className="animate-fade-in text-center">
-      <h2 className="text-2xl md:text-3xl font-display font-bold mb-4 text-foreground">
-        Let's get started! 🎉
+      <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4 text-foreground">
+        Let's get started!
       </h2>
       <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto">
         Just 5 quick questions to help me personalize your experience.
