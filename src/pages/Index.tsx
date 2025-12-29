@@ -71,7 +71,7 @@ const Index = () => {
         {/* Footer - TODO: Update company name below */}
         <footer className="text-center mt-16 py-8">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Sandy Shore Nutrition. All rights reserved.
+            © {new Date().getFullYear()} AI Coachbox. All rights reserved.
           </p>
         </footer>
       </main>
