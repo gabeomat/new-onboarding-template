@@ -1,40 +1,10 @@
 import { Link } from "react-router-dom";
 import Quiz from "@/components/quiz/Quiz";
 import shellImage from "@/assets/untitled_design_(9).png";
-import { Settings, X } from "lucide-react";
-import { useState } from "react";
 
 const Index = () => {
-  // TODO: Remove this state and the banner once you've completed customization
-  const [showCustomizeBanner, setShowCustomizeBanner] = useState(true);
-
   return (
     <div className="min-h-screen gradient-hero">
-      {/* ========== CUSTOMIZATION BANNER - Remove this section once done ========== */}
-      {showCustomizeBanner && (
-        <div className="bg-primary text-primary-foreground py-3 px-4">
-          <div className="container mx-auto flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <Settings className="w-5 h-5 animate-spin-slow" />
-              <span className="text-sm md:text-base font-medium">
-                👋 New here? Start with the{" "}
-                <Link to="/checklist" className="underline font-bold hover:opacity-80">
-                  Customization Checklist
-                </Link>
-              </span>
-            </div>
-            <button
-              onClick={() => setShowCustomizeBanner(false)}
-              className="p-1 hover:opacity-70 transition-opacity"
-              aria-label="Dismiss banner"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-      )}
-      {/* ========== END CUSTOMIZATION BANNER ========== */}
-
       {/* Hero Section */}
       <main className="container mx-auto px-4 py-8 md:py-16">
         <div className="text-center mb-12">
