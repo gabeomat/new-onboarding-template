@@ -5,7 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
-import { LogOut, Mail } from "lucide-react";
+import { LogOut, Mail, Download } from "lucide-react";
 
 interface QuizSubmission {
   id: string;
@@ -85,6 +85,50 @@ const AdminDashboard = () => {
     }
   };
 
+  const handleExportCSV = () => {
+    if (submissions.length === 0) {
+      toast.error("No submissions to export");
+      return;
+    }
+
+    const allQuestions = new Set<string>();
+    submissions.forEach(submission => {
+      Object.keys(submission.answers).forEach(question => allQuestions.add(question));
+    });
+
+    const headers = ["Email", "Submitted At", ...Array.from(allQuestions)];
+
+    const csvRows = [
+      headers.join(","),
+      ...submissions.map(submission => {
+        const row = [
+          `"${submission.email}"`,
+          `"${new Date(submission.created_at).toLocaleString()}"`,
+          ...Array.from(allQuestions).map(question => {
+            const answer = submission.answers[question];
+            const value = typeof answer === 'object' ? JSON.stringify(answer) : (answer || "");
+            return `"${String(value).replace(/"/g, '""')}"`;
+          })
+        ];
+        return row.join(",");
+      })
+    ];
+
+    const csvContent = csvRows.join("\n");
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+
+    link.setAttribute("href", url);
+    link.setAttribute("download", `quiz-submissions-${new Date().toISOString().split('T')[0]}.csv`);
+    link.style.visibility = "hidden";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    toast.success("CSV exported successfully");
+  };
+
   if (loading || isLoading || !isAdmin) {
     return (
       <div className="min-h-screen gradient-hero flex items-center justify-center">
@@ -103,10 +147,16 @@ const AdminDashboard = () => {
               Logged in as {user?.email}
             </p>
           </div>
-          <Button onClick={handleSignOut} variant="outline">
-            <LogOut className="w-4 h-4 mr-2" />
-            Sign Out
-          </Button>
+          <div className="flex gap-2">
+            <Button onClick={handleExportCSV} variant="outline">
+              <Download className="w-4 h-4 mr-2" />
+              Export CSV
+            </Button>
+            <Button onClick={handleSignOut} variant="outline">
+              <LogOut className="w-4 h-4 mr-2" />
+              Sign Out
+            </Button>
+          </div>
         </div>
 
         <div className="grid gap-6">

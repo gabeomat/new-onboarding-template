@@ -73,6 +73,14 @@ const Index = () => {
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} AI Coachbox. All rights reserved.
           </p>
+          <div className="mt-2">
+            <Link
+              to="/admin/login"
+              className="text-xs text-muted-foreground/50 hover:text-muted-foreground transition-colors"
+            >
+              Admin
+            </Link>
+          </div>
         </footer>
       </main>
     </div>
