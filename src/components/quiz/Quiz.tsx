@@ -25,9 +25,11 @@ const Quiz = () => {
   
   const currentAnswer = answers[currentQuestion?.id] || "";
   const currentOtherText = otherTexts[currentQuestion?.id] || "";
-  const canProceed = currentAnswer === "other" 
-    ? currentOtherText.trim().length > 0 
-    : currentAnswer.trim().length > 0;
+  const canProceed = currentQuestion?.type === 'multiple'
+    ? currentAnswer.trim().length > 0
+    : currentAnswer === "other"
+      ? currentOtherText.trim().length > 0
+      : currentAnswer.trim().length > 0;
 
   const handleAnswer = (answer: string, otherText?: string) => {
     setAnswers((prev) => ({
@@ -67,9 +69,16 @@ const Quiz = () => {
     return quizQuestions.map((q) => {
       const answer = answers[q.id];
       const otherText = otherTexts[q.id];
-      
+
       if (q.type === "text") {
         return { question: q.question, answer };
+      }
+      if (q.type === "multiple") {
+        const selectedIds = answer ? answer.split(',') : [];
+        const selectedLabels = selectedIds
+          .map(id => q.options?.find(o => o.id === id)?.label)
+          .filter(Boolean);
+        return { question: q.question, answer: selectedLabels.join(', ') };
       }
       if (answer === "other" && otherText) {
         return { question: q.question, answer: `Other: ${otherText}` };
@@ -153,7 +162,7 @@ const Quiz = () => {
                 disabled={!canProceed || isSubmitting}
                 className="flex items-center gap-2 gradient-primary hover:opacity-90 shadow-button"
               >
-                {isSubmitting ? "Submitting..." : isLastQuestion ? "Get My Blueprint" : "Next"}
+{isSubmitting ? "Submitting..." : isLastQuestion ? "Get My Nutrition Blueprint" : "Next"}
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </div>

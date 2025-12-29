@@ -43,7 +43,7 @@ const EmailCapture = ({ onSubmit, isLoading }: EmailCaptureProps) => {
         Let's get started!
       </h2>
       <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto">
-        Just 5 quick questions to help me personalize your experience.
+        Just 5 quick questions to create your personalized nutrition blueprint.
       </p>
 
       <form onSubmit={handleSubmit} className="max-w-sm mx-auto space-y-4">
@@ -106,7 +106,7 @@ const EmailCapture = ({ onSubmit, isLoading }: EmailCaptureProps) => {
           disabled={isLoading}
           className="w-full h-14 text-lg font-semibold gradient-primary hover:opacity-90 shadow-button transition-all"
         >
-          {isLoading ? "Loading..." : "I'm Ready - Let's Do This"}
+          {isLoading ? "Loading..." : "Start My Assessment"}
         </Button>
       </form>
     </div>

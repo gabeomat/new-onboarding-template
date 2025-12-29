@@ -14,15 +14,33 @@ const QuizQuestion = ({ question, answer, otherText = "", onAnswer }: QuizQuesti
   const [localOtherText, setLocalOtherText] = useState(otherText);
   const isOtherSelected = answer === "other";
 
+  const selectedAnswers = question.type === 'multiple'
+    ? (answer ? answer.split(',') : [])
+    : [];
+
   useEffect(() => {
     setLocalOtherText(otherText);
   }, [otherText, question.id]);
 
   const handleOptionClick = (optionId: string) => {
-    if (optionId === "other") {
-      onAnswer("other", localOtherText);
+    if (question.type === 'multiple') {
+      const currentSelections = answer ? answer.split(',') : [];
+      const isSelected = currentSelections.includes(optionId);
+
+      let newSelections;
+      if (isSelected) {
+        newSelections = currentSelections.filter(id => id !== optionId);
+      } else {
+        newSelections = [...currentSelections, optionId];
+      }
+
+      onAnswer(newSelections.join(','));
     } else {
-      onAnswer(optionId);
+      if (optionId === "other") {
+        onAnswer("other", localOtherText);
+      } else {
+        onAnswer(optionId);
+      }
     }
   };
 
@@ -31,9 +49,16 @@ const QuizQuestion = ({ question, answer, otherText = "", onAnswer }: QuizQuesti
     onAnswer("other", text);
   };
 
+  const isSelected = (optionId: string) => {
+    if (question.type === 'multiple') {
+      return selectedAnswers.includes(optionId);
+    }
+    return answer === optionId;
+  };
+
   return (
     <div className="animate-fade-in">
-      <h2 className="text-2xl md:text-3xl font-display font-bold mb-8 text-foreground">
+      <h2 className="text-2xl md:text-3xl font-display font-semibold mb-8 text-foreground">
         {question.question}
       </h2>
 
@@ -49,8 +74,9 @@ const QuizQuestion = ({ question, answer, otherText = "", onAnswer }: QuizQuesti
             <QuizOption
               key={option.id}
               label={option.label}
-              selected={answer === option.id}
+              selected={isSelected(option.id)}
               onClick={() => handleOptionClick(option.id)}
+              isMultiple={question.type === 'multiple'}
             />
           ))}
           {question.hasOther && (

@@ -22,8 +22,8 @@ const QuizComplete = ({ onRestart }: QuizCompleteProps) => {
       </h2>
 
       <p className="text-lg text-muted-foreground mb-8 max-w-lg mx-auto">
-        {/* TODO: Customize this message */}
-        Thank you for completing the quiz! We'll review your answers and get back to you with personalized recommendations.
+        Thank you for completing the nutrition assessment! We're reviewing your goals and preferences
+        to create your personalized nutrition blueprint.
       </p>
 
       <div className="bg-card rounded-2xl p-6 shadow-card max-w-lg mx-auto border border-border">
@@ -31,16 +31,15 @@ const QuizComplete = ({ onRestart }: QuizCompleteProps) => {
         <ul className="text-left text-muted-foreground space-y-3">
           <li className="flex items-start gap-2">
             <span className="text-primary font-bold">1.</span>
-            {/* TODO: Customize these steps */}
-            <span>Check your email for a confirmation message.</span>
+            <span>Check your email for your personalized nutrition blueprint.</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-primary font-bold">2.</span>
-            <span>Join our community and introduce yourself!</span>
+            <span>Review your custom macro calculations and meal recommendations.</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-primary font-bold">3.</span>
-            <span>Explore our resources to get started.</span>
+            <span>Join our community for ongoing support and guidance.</span>
           </li>
         </ul>
       </div>
@@ -58,8 +57,7 @@ const QuizComplete = ({ onRestart }: QuizCompleteProps) => {
       </a>
 
       <p className="text-muted-foreground mt-8 max-w-lg mx-auto italic">
-        {/* TODO: Add your personal message */}
-        We're excited to have you and can't wait to help you achieve your goals!
+        We're excited to support you on your nutrition journey and help you achieve your health and fitness goals!
       </p>
 
       {onRestart && (

@@ -1,12 +1,14 @@
 import { cn } from "@/lib/utils";
+import { Check } from "lucide-react";
 
 interface QuizOptionProps {
   label: string;
   selected: boolean;
   onClick: () => void;
+  isMultiple?: boolean;
 }
 
-const QuizOption = ({ label, selected, onClick }: QuizOptionProps) => {
+const QuizOption = ({ label, selected, onClick, isMultiple = false }: QuizOptionProps) => {
   return (
     <button
       onClick={onClick}
@@ -20,16 +22,29 @@ const QuizOption = ({ label, selected, onClick }: QuizOptionProps) => {
       )}
     >
       <div className="flex items-center gap-3">
-        <div
-          className={cn(
-            "w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all",
-            selected ? "border-primary bg-primary" : "border-muted-foreground"
-          )}
-        >
-          {selected && (
-            <div className="w-2 h-2 rounded-full bg-primary-foreground" />
-          )}
-        </div>
+        {isMultiple ? (
+          <div
+            className={cn(
+              "w-5 h-5 rounded border-2 flex items-center justify-center transition-all",
+              selected ? "border-primary bg-primary" : "border-muted-foreground"
+            )}
+          >
+            {selected && (
+              <Check className="w-3 h-3 text-primary-foreground" strokeWidth={3} />
+            )}
+          </div>
+        ) : (
+          <div
+            className={cn(
+              "w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all",
+              selected ? "border-primary bg-primary" : "border-muted-foreground"
+            )}
+          >
+            {selected && (
+              <div className="w-2 h-2 rounded-full bg-primary-foreground" />
+            )}
+          </div>
+        )}
         <span className={cn("font-medium", selected && "text-primary")}>
           {label}
         </span>
